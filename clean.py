@@ -1,7 +1,7 @@
 #Persiapan
 import RPi.GPIO as GPIO
 from time import sleep
-from jalan_raw import baca_s
+from sensor_raw import baca_s
 from cmultiplexer_raw import ganti_c
 
 # The script as below using BCM GPIO 00..nn numbers
