@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import smbus
-
+from time import sleep
 class multiplex:
     
     def __init__(self, bus):
@@ -23,11 +23,12 @@ class multiplex:
         self.bus.write_byte_data(address,0x04,action)  #0x04 is the register for switching channels 
 
 def ganti_c(pilih):
-    
+    sleep(0.5)
     bus=1       # 0 for rev1 boards etc.
     address=0x77
     
     plexer = multiplex(bus)
     plexer.channel(address,pilih)
     print("channel yg dipilih ",pilih)
-    print("Now run i2cdetect")
+    print("Sekarang sensor siap dibaca")
+    sleep(0.5)
