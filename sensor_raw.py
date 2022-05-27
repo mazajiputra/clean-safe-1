@@ -15,4 +15,4 @@ def baca_s():
     print(temperature)
     print(relative_humidity)
     print("")
-    time.sleep(10)
+    time.sleep(60)
