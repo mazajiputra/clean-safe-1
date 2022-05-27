@@ -22,7 +22,7 @@ class multiplex:
 
         self.bus.write_byte_data(address,0x04,action)  #0x04 is the register for switching channels 
 
-def cetak(pilih):
+def ganti_c(pilih):
     
     bus=1       # 0 for rev1 boards etc.
     address=0x77

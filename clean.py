@@ -2,9 +2,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 from jalan_raw import baca_s
-import cmultiplexer_raw
-from ref_relay import r_off
-from ref_relay import r_on
+from cmultiplexer_raw import ganti_c
 
 # The script as below using BCM GPIO 00..nn numbers
 GPIO.setmode(GPIO.BCM)
@@ -16,7 +14,19 @@ GPIO.setup(16, GPIO.OUT)
 GPIO.setup(20, GPIO.OUT)
 GPIO.setup(21, GPIO.OUT)
 
+def ref_off():
+    GPIO.output(12, GPIO.HIGH)
+    GPIO.output(16, GPIO.HIGH)
+    GPIO.output(20, GPIO.HIGH)
+    GPIO.output(21, GPIO.HIGH)   
+    sleep(2) 
 
+def ref_on():
+    GPIO.output(12, GPIO.LOW)
+    GPIO.output(16, GPIO.LOW)
+    GPIO.output(20, GPIO.LOW)
+    GPIO.output(21, GPIO.LOW)   
+    sleep(2)
 ####################################################################################################
 try:
     #r_off()#relay mati semua
