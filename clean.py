@@ -2,7 +2,7 @@
 from ref_r import setting_relay,r_off,r_on
 import RPi.GPIO as GPIO
 from time import sleep
-from sensor_raw import baca_s
+from sensor_raw import waktu_now,baca_s
 from cmultiplexer_raw import ganti_c
 from datetime import datetime
 # Mengatur data
