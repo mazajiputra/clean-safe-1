@@ -15,7 +15,7 @@ def waktu_now():
     print(data_full)
 #while True:
 def baca_s(no_sensor):
-    #global data_full
+    global data_full
     try:
         #time.sleep(5)
         i2c = board.I2C()   # uses board.SCL and board.SDA
