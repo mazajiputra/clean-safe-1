@@ -6,6 +6,7 @@ from datetime import datetime
 import numpy as np 
 from array import array
 def waktu_now():
+    global data_full
     data_full=[]
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     data={'waktu': [waktu]}
@@ -15,7 +16,6 @@ def waktu_now():
     print(data_full)
 #while True:
 def baca_s(no_sensor):
-    global data_full
     try:
         #time.sleep(5)
         i2c = board.I2C()   # uses board.SCL and board.SDA
