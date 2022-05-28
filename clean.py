@@ -37,7 +37,7 @@ try:
         ganti_c(2)
         baca_s()
         #1(channel 4, pin 16)
-        ganti_c(4)
+        ganti_c(5)
         baca_s()
         #3(channel 5, pin 20)
         ganti_c(5)
