@@ -1,0 +1,23 @@
+import RPi.GPIO as GPIO
+def setting_relay():
+    GPIO.setmode(GPIO.BCM)
+    # Disable Warnings
+    GPIO.setwarnings(False)
+    # Set relay pins as output
+    GPIO.setup(12, GPIO.OUT)
+    GPIO.setup(16, GPIO.OUT)
+    GPIO.setup(20, GPIO.OUT)
+    GPIO.setup(21, GPIO.OUT)
+def r_off():
+    GPIO.output(12, GPIO.HIGH)
+    GPIO.output(16, GPIO.HIGH)
+    GPIO.output(20, GPIO.HIGH)
+    GPIO.output(21, GPIO.HIGH)   
+    sleep(2) 
+
+def r_on():
+    GPIO.output(12, GPIO.LOW)
+    GPIO.output(16, GPIO.LOW)
+    GPIO.output(20, GPIO.LOW)
+    GPIO.output(21, GPIO.LOW)   
+    sleep(2)
