@@ -6,11 +6,11 @@ from datetime import datetime
 import numpy as np 
 def waktu_now():
     # global data_full
-    # waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    # data={'waktu': [waktu]}
+    waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    data={'waktu': [waktu]}
     # data_full=np.append(data_full, data)
 
-    # print(data)
+    print(data)
     # print(data_full)
 #while True:
 def baca_s(no_sensor):
@@ -25,21 +25,21 @@ def baca_s(no_sensor):
         print(temperature)
         print(relative_humidity)
         print("")      
-        break
+    
     except Exception:
         temperature=0
         relative_humidity=0
+    finally:
+        #2_Perangkaian data
+        data = {
+            f's{no_sensor}_suhu': [temperature],
+            f's{no_sensor}_kelembaban': [relative_humidity],
+        }
+        #3_Pengappen data ke data full
 
-    #2_Perangkaian data
-    data = {
-    f's{no_sensor}_suhu': [temperature],
-    f's{no_sensor}_kelembaban': [relative_humidity],
-    }
-    #3_Pengappen data ke data full
+        # data_full=np.append(data_full, data)
 
-    # data_full=np.append(data_full, data)
+        # print(data)
+        # print(data_full)
 
-    # print(data)
-    # print(data_full)
-
-    time.sleep(5)
+        time.sleep(5)
