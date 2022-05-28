@@ -29,11 +29,9 @@ def baca_s(no_sensor):
     finally:
         #2_Perangkaian data
         global data_full
-        data_suhu = {f's{no_sensor}_suhu': temperature}
-        data_kelembaban = {f's{no_sensor}_kelembaban': relative_humidity}
+        data = {f's{no_sensor}_suhu': temperature, f's{no_sensor}_kelembaban': relative_humidity}
         #3_Pengappen data ke data full
-        data_full=np.append(data_full, data_suhu)
-        data_full=np.append(data_full, data_kelembaban)
+        data_full=data_full+data
         # print(data_suhu,data_kelembaban)
         print(data_full)
         
