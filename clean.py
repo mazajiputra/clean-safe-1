@@ -45,6 +45,8 @@ try:
         #4(channel 7, pin 21)
         ganti_c(7)
         baca_s()
+        #Istirahat
+        sleep(30)
 except KeyboardInterrupt:
     #r_off()#relay mati semua
     print("keluar")
