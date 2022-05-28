@@ -5,13 +5,13 @@ import pandas as pd
 from datetime import datetime
 import numpy as np 
 def waktu_now():
-    global data_full
-    waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    data={'waktu': [waktu]}
-    data_full=np.append(data_full, data)
+    # global data_full
+    # waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    # data={'waktu': [waktu]}
+    # data_full=np.append(data_full, data)
 
-    print(data)
-    print(data_full)
+    # print(data)
+    # print(data_full)
 #while True:
 def baca_s(no_sensor):
     #global data_full
@@ -37,9 +37,9 @@ def baca_s(no_sensor):
     }
     #3_Pengappen data ke data full
 
-    data_full=np.append(data_full, data)
+    # data_full=np.append(data_full, data)
 
-    print(data)
-    print(data_full)
+    # print(data)
+    # print(data_full)
 
     time.sleep(5)
