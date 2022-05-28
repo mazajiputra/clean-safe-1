@@ -8,7 +8,7 @@ from array import array
 def waktu_now():
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     global data_full
-    data_full={'waktu': [waktu]}
+    data_full={'waktu': waktu}
     print(data_full)
 #while True:
 def baca_s(no_sensor):
@@ -30,8 +30,8 @@ def baca_s(no_sensor):
         #2_Perangkaian data
         global data_full
         data = {
-            f's{no_sensor}_suhu': [temperature],
-            f's{no_sensor}_kelembaban': [relative_humidity],
+            f's{no_sensor}_suhu': temperature,
+            f's{no_sensor}_kelembaban': relative_humidity,
         }
         #3_Pengappen data ke data full
 
