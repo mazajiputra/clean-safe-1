@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 from sensor_raw import baca_s
 from cmultiplexer_raw import ganti_c
-
+from datetime import datetime
 # Mengatur data
 import pandas as pd
 
@@ -31,6 +31,11 @@ def r_on():
     GPIO.output(21, GPIO.LOW)   
     sleep(2)
 ####################################################################################################
+#def waktu_now():#Untuk imput data waktu
+ #   try:
+        
+   # except Exception as e:
+  #  print('Error:',e)
 def sen1():
     try:
         ganti_c(2)
@@ -64,6 +69,8 @@ try:
     #r_off()#relay mati semua
     r_on()#relay nyala semua
     while (True):
+        #Pencatatan waktu
+        #waktu_now()
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
         sen1()
