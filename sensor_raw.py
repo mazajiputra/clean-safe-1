@@ -6,12 +6,9 @@ from datetime import datetime
 import numpy as np 
 from array import array
 def waktu_now():
-    global data_full
-    data_full=[]
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    data={'waktu': [waktu]}
-    data_full=np.concatenate((data_full, data),axis=0)
-
+    global data_full
+    data_full={'waktu': [waktu]}
     print(data)
     print(data_full)
 #while True:
