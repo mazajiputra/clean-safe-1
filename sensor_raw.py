@@ -10,7 +10,7 @@ def waktu_now():
     data_full=[]
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     data={'waktu': [waktu]}
-    data_full=np.insert(data_full, data,axis=None)
+    data_full=np.insert(data_full, data)
 
     print(data)
     print(data_full)
@@ -39,7 +39,7 @@ def baca_s(no_sensor):
         }
         #3_Pengappen data ke data full
 
-        data_full=np.insert(data_full, data,axis=None)
+        data_full=np.insert(data_full, data)
 
         print(data)
         print(data_full)
