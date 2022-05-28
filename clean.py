@@ -28,21 +28,24 @@ def sen1():
         sleep(3) 
 def sen2():
     try:
-        ganti_c(4)
+        # ganti_c(4)
+        ganti_c(2)
         baca_s(2)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
 def sen3():
     try:
-        ganti_c(5)
+        # ganti_c(5)
+        ganti_c(2)
         baca_s(3)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
 def sen4():
     try:
-        ganti_c(7)
+        # ganti_c(7)
+        ganti_c(2)
         baca_s(4)
     except Exception as e:
         print('Error:',e)
@@ -61,11 +64,11 @@ try:
         #1(channel 2, pin 12)
         sen1()
         #1(channel 4, pin 16)
-        sen1()
+        sen2()
         #3(channel 5, pin 20)
-        sen1()
+        sen3()
         #4(channel 7, pin 21)
-        sen1()
+        sen4()
         #Istirahat
         sleep(30)
         print("===================================END+======================")
