@@ -25,7 +25,7 @@ def baca_s(no_sensor):
         print(temperature)
         print(relative_humidity)
         print("")      
-
+        break
     except Exception:
         temperature=0
         relative_humidity=0
