@@ -28,23 +28,48 @@ def r_on():
     GPIO.output(21, GPIO.LOW)   
     sleep(2)
 ####################################################################################################
+def sen1():
+    try
+        ganti_c(2)
+        baca_s()
+    except Exception as e
+        print('Error:',e)
+        sleep(3) 
+def sen2():
+    try
+        ganti_c(4)
+        baca_s()
+    except Exception as e
+        print('Error:',e)
+        sleep(3) 
+def sen3():
+    try
+        ganti_c(5)
+        baca_s()
+    except Exception as e
+        print('Error:',e)
+        sleep(3) 
+def sen4():
+    try
+        ganti_c(7)
+        baca_s()
+    except Exception as e
+        print('Error:',e)
+        sleep(3) 
+################################
 try:
     #r_off()#relay mati semua
     r_on()#relay nyala semua
     while (True):
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
-        ganti_c(2)
-        baca_s()
+        sen1()
         #1(channel 4, pin 16)
-        ganti_c(5)
-        baca_s()
+        sen1()
         #3(channel 5, pin 20)
-        ganti_c(5)
-        baca_s()
+        sen1()
         #4(channel 7, pin 21)
-        ganti_c(7)
-        baca_s()
+        sen1()
         #Istirahat
         sleep(30)
 except KeyboardInterrupt:
