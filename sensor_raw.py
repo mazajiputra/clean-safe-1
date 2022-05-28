@@ -38,9 +38,9 @@ def baca_s(no_sensor):
         }
         #3_Pengappen data ke data full
 
-        # data_full=np.append(data_full, data)
+        data_full=np.append(data_full, data)
 
-        # print(data)
-        # print(data_full)
+        print(data)
+        print(data_full)
 
         time.sleep(5)
