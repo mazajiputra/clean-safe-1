@@ -9,7 +9,6 @@ def waktu_now():
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     global data_full
     data_full={'waktu': [waktu]}
-    print(data)
     print(data_full)
 #while True:
 def baca_s(no_sensor):
