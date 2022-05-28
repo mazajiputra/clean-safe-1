@@ -5,7 +5,7 @@ import pandas as pd
 from datetime import datetime
 import numpy as np 
 def waktu_now():
-    # global data_full
+    global data_full
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     data={'waktu': [waktu]}
     data_full=np.append(data_full, data)
