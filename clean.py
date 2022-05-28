@@ -68,6 +68,7 @@ try:
         sen1()
         #Istirahat
         sleep(30)
+        print("===================================END+======================")
 except KeyboardInterrupt:
     #r_off()#relay mati semua
     print("keluar")
