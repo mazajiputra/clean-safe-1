@@ -3,6 +3,7 @@ import board
 import adafruit_shtc3
 import pandas as pd
 from datetime import datetime
+import numpy as np 
 def waktu_now():
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     data={'waktu': [waktu]}
