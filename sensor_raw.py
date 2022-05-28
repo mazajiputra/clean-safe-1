@@ -29,7 +29,7 @@ def baca_s(no_sensor):
     finally:
         #2_Perangkaian data
         global data_full
-        data_1 = {
+        data = {
             f's{no_sensor}_suhu': temperature,
             f's{no_sensor}_kelembaban': relative_humidity,
         }
