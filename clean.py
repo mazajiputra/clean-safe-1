@@ -8,10 +8,9 @@ from datetime import datetime
 # Mengatur data
 import pandas as pd
 
-# The script as below using BCM GPIO 00..nn numbers
+##########################################################
+#=========Setting=============
 setting_relay()
-
-
 
 ####################################################################################################
 #def waktu_now():#Untuk imput data waktu
@@ -19,6 +18,7 @@ setting_relay()
         
    # except Exception as e:
   #  print('Error:',e)
+
 def sen1():
     try:
         ganti_c(2)
@@ -48,12 +48,15 @@ def sen4():
         print('Error:',e)
         sleep(3) 
 ################################
+
+data_full=[]
+##############
 try:
     #r_off()#relay mati semua
     r_on()#relay nyala semua
     while (True):
         #Pencatatan waktu
-        #waktu_now()
+        waktu_now()
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
         sen1()

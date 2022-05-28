@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 def setting_relay():
+    # The script as below using BCM GPIO 00..nn numbers
     GPIO.setmode(GPIO.BCM)
     # Disable Warnings
     GPIO.setwarnings(False)
