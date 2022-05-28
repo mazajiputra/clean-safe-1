@@ -55,7 +55,6 @@ try:
     #r_off()#relay mati semua
     r_on()#relay nyala semua
     while (True):
-        #global data_full
         #Pencatatan waktu
         waktu_now()
         #Sementara, karena hanya sisa 1 sensor
