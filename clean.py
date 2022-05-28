@@ -29,31 +29,31 @@ def r_on():
     sleep(2)
 ####################################################################################################
 def sen1():
-    try
+    try:
         ganti_c(2)
         baca_s()
-    except Exception as e
+    except Exception as e:
         print('Error:',e)
         sleep(3) 
 def sen2():
-    try
+    try:
         ganti_c(4)
         baca_s()
-    except Exception as e
+    except Exception as e:
         print('Error:',e)
         sleep(3) 
 def sen3():
-    try
+    try:
         ganti_c(5)
         baca_s()
-    except Exception as e
+    except Exception as e:
         print('Error:',e)
         sleep(3) 
 def sen4():
-    try
+    try:
         ganti_c(7)
         baca_s()
-    except Exception as e
+    except Exception as e:
         print('Error:',e)
         sleep(3) 
 ################################
