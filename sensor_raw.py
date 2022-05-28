@@ -34,7 +34,7 @@ def baca_s(no_sensor):
         #3_Pengappen data ke data full
         data_full=np.append(data_full, data_suhu)
         data_full=np.append(data_full, data_kelembaban)
-        print(data)
+        # print(data_suhu,data_kelembaban)
         print(data_full)
         
 
