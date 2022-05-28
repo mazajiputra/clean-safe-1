@@ -7,6 +7,7 @@ import adafruit_shtc3
 
 #while True:
 def baca_s():
+    time.sleep(5)
     i2c = board.I2C()   # uses board.SCL and board.SDA
     sht = adafruit_shtc3.SHTC3(i2c)
     temperature, relative_humidity = sht.measurements
