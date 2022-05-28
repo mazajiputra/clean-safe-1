@@ -4,6 +4,9 @@ from time import sleep
 from sensor_raw import baca_s
 from cmultiplexer_raw import ganti_c
 
+# Mengatur data
+import pandas as pd
+
 # The script as below using BCM GPIO 00..nn numbers
 GPIO.setmode(GPIO.BCM)
 # Disable Warnings
@@ -31,28 +34,28 @@ def r_on():
 def sen1():
     try:
         ganti_c(2)
-        baca_s()
+        baca_s(1)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
 def sen2():
     try:
         ganti_c(4)
-        baca_s()
+        baca_s(2)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
 def sen3():
     try:
         ganti_c(5)
-        baca_s()
+        baca_s(3)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
 def sen4():
     try:
         ganti_c(7)
-        baca_s()
+        baca_s(4)
     except Exception as e:
         print('Error:',e)
         sleep(3) 

@@ -1,12 +1,12 @@
 import time
 import board
 import adafruit_shtc3
-
-
+import pandas as pd
+import datetime
 
 
 #while True:
-def baca_s():
+def baca_s(no_sensor):
     time.sleep(5)
     i2c = board.I2C()   # uses board.SCL and board.SDA
     sht = adafruit_shtc3.SHTC3(i2c)
@@ -16,4 +16,13 @@ def baca_s():
     print(temperature)
     print(relative_humidity)
     print("")
+    #Memasukkan data
+
+    data = {
+    'waktu': [datetime.datetime.now().time()],
+    's{no_sensor}_suhu': [temperature],
+    's{no_sensor}_kelembaban': [relative_humidity],
+}
+    print(data)
+
     time.sleep(5)
