@@ -13,7 +13,7 @@ def waktu_now():
 #while True:
 def baca_s(no_sensor):
     try:
-        #time.sleep(5)
+        time.sleep(5)
         i2c = board.I2C()   # uses board.SCL and board.SDA
         sht = adafruit_shtc3.SHTC3(i2c)
         temperature, relative_humidity = sht.measurements
@@ -34,6 +34,3 @@ def baca_s(no_sensor):
         data_full|=data
         # print(data_suhu,data_kelembaban)
         print(data_full)
-        
-
-        time.sleep(5)
