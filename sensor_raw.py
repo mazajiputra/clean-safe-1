@@ -21,8 +21,8 @@ def baca_s(no_sensor):
 
     data = {
     'waktu': [waktu],
-    's{no_sensor}_suhu': [temperature],
-    's{no_sensor}_kelembaban': [relative_humidity],
+    f's{no_sensor}_suhu': [temperature],
+    f's{no_sensor}_kelembaban': [relative_humidity],
 }
     print(data)
 
