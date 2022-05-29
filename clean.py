@@ -72,7 +72,7 @@ try:
         sen4()
         ####
         #Simpan Data file file offline
-
+        simpan_dt()
         ####
         #Istirahat
         sleep(15)
