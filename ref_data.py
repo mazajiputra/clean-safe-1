@@ -9,3 +9,18 @@ def simpan_dt():
         print("file deleted")
     else:
         print("file not found")
+
+#create DataFrame
+df0 = pd.DataFrame({'waktu': [0],
+                   's1_suhu': [0],
+                   's1_kelembaban': [0],
+                   's2_suhu': [0],
+                   's2_kelembaban': [0],
+                   's3_suhu': [0],
+                   's3_kelembaban': [0],
+                   's4_suhu': [0],
+                   's4_kelembaban': [0],
+                   })
+
+#view DataFrame
+print (df0)
