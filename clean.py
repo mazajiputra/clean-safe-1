@@ -5,6 +5,7 @@ from time import sleep
 from sensor_raw import waktu_now,baca_s
 from cmultiplexer_raw import ganti_c
 from datetime import datetime
+from ref_data import simpan_dt
 # Mengatur data
 import pandas as pd
 
@@ -69,8 +70,12 @@ try:
         sen3()
         #4(channel 7, pin 21)
         sen4()
+        ####
+        #Simpan Data file file offline
+
+        ####
         #Istirahat
-        sleep(30)
+        sleep(15)
         print("===================================END+======================")
 except KeyboardInterrupt:
     #r_off()#relay mati semua
