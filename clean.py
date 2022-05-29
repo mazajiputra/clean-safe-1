@@ -20,34 +20,34 @@ setting_relay()
    # except Exception as e:
   #  print('Error:',e)
 
-def sen1():
+def sen1(data_full):
     try:
         ganti_c(2)
-        baca_s(1)
+        baca_s(1,data_full)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
-def sen2():
+def sen2(data_full):
     try:
         # ganti_c(4)
         ganti_c(2)
-        baca_s(2)
+        baca_s(2,data_full)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
-def sen3():
+def sen3(data_full):
     try:
         # ganti_c(5)
         ganti_c(2)
-        baca_s(3)
+        baca_s(3,data_full)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
-def sen4():
+def sen4(data_full):
     try:
         # ganti_c(7)
         ganti_c(2)
-        baca_s(4)
+        baca_s(4,data_full)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
@@ -60,18 +60,17 @@ try:
     r_on()#relay nyala semua
     while (True):
         #Pencatatan waktu
-        #datafull=[]
-        # datafull=waktu_now(datafull)
-        waktu_now()
+        data_full=[]
+        data_full=waktu_now(data_full)
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
-        sen1()
+        data_full=sen1(data_full)
         #1(channel 4, pin 16)
-        sen2()
+        data_full=sen2(data_full)
         #3(channel 5, pin 20)
-        sen3()
+        data_full=sen3(data_full)
         #4(channel 7, pin 21)
-        sen4()
+        data_full=sen4(data_full)
         ####
         #Simpan Data file file offline
         

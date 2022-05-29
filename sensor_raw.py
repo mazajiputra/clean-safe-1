@@ -6,13 +6,13 @@ import pandas as pd
 from datetime import datetime
 import numpy as np 
 from array import array
-def waktu_now():
+def waktu_now(data_full):
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    global data_full
     data_full={'waktu': waktu}
     print(data_full)
+    return data_full
 #while True:
-def baca_s(no_sensor):
+def baca_s(no_sensor,data_full):
     try:
         time.sleep(5)
         i2c = board.I2C()   # uses board.SCL and board.SDA
@@ -29,7 +29,6 @@ def baca_s(no_sensor):
         relative_humidity=0
     finally:
         #2_Perangkaian data
-        global data_full
         data = {f's{no_sensor}_suhu': temperature, f's{no_sensor}_kelembaban': relative_humidity}
         #3_Pengappen data ke data full
         data_full|=data
