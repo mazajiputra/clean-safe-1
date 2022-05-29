@@ -29,10 +29,8 @@ def baca_s(no_sensor,data_full):
         relative_humidity=0
     finally:
         #2_Perangkaian data
-        data = {f's{no_sensor}_suhu': temperature, f's{no_sensor}_kelembaban': relative_humidity}
-        print("data baru",data)
-        #3_Pengappen data ke data full
-        np.concatenate((data_full,data),axis=0)
+        data_full[f's{no_sensor}_suhu']= temperature
+        data_full[f's{no_sensor}_kelembaban'] = relative_humidity
         # print(data_suhu,data_kelembaban)
         print(data_full)
         return data_full
