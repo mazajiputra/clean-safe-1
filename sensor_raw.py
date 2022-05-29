@@ -31,7 +31,7 @@ def cetak():
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
         device = I2cDevice(I2cConnection(transceiver), 0x70)
         temperature, humidity = device.execute(Shtc3I2cCmdMeasure())
-        print("Temperature: {}, Humidity: {}".format(temperature, humidity))
+
         return temperature,humidity
 
 
@@ -45,19 +45,13 @@ def baca_s(no_sensor,data_full):
     print(data_full)
     try:
         temperature,humidity=cetak()
-        
+        print(temperature)
+        print(humidity)
     except Exception:
         temperature=0
         humidity=0
     finally:
-        #2_Perangkaian data
-        # key='s'+str(no_sensor)+'_suhu'
-        # data_full[key] = temperature
-        # data_full.update({f's{no_sensor}_suhu'= temperature})
 
-        # data_full[f's{no_sensor}_suhu']= temperature
-        # data_full[f's{no_sensor}_kelembaban'] = relative_humidity
-        # print(data_suhu,data_kelembaban)
         
         data={f's{no_sensor}_suhu': temperature,f's{no_sensor}_kelembaban' : humidity}
         data_full=Merge(data_full,data)
