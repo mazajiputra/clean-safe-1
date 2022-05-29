@@ -29,8 +29,8 @@ def baca_s(no_sensor,data_full):
         relative_humidity=0
     finally:
         #2_Perangkaian data
-        data_full{f's{no_sensor}_suhu'}= temperature
-        data_full{f's{no_sensor}_kelembaban'} = relative_humidity
+        data_full[f's{no_sensor}_suhu']= temperature
+        data_full[f's{no_sensor}_kelembaban'] = relative_humidity
         # print(data_suhu,data_kelembaban)
         print(data_full)
         return data_full
