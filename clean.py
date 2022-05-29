@@ -30,7 +30,7 @@ def sen1(data_full):
 def sen2(data_full):
     try:
         # ganti_c(4)
-        ganti_c(2)
+        ganti_c(4)
         baca_s(2,data_full)
     except Exception as e:
         print('Error:',e)
@@ -38,7 +38,7 @@ def sen2(data_full):
 def sen3(data_full):
     try:
         # ganti_c(5)
-        ganti_c(2)
+        ganti_c(5)
         baca_s(3,data_full)
     except Exception as e:
         print('Error:',e)
@@ -46,7 +46,7 @@ def sen3(data_full):
 def sen4(data_full):
     try:
         # ganti_c(7)
-        ganti_c(2)
+        ganti_c(7)
         baca_s(4,data_full)
     except Exception as e:
         print('Error:',e)
