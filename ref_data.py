@@ -27,3 +27,9 @@ def simpan_dt():
 
     #export DataFrame to CSV file
     df0.to_csv('data/file_data.csv', index=True)
+
+    #Siapkaan data baru
+    global data_full
+    df_baru=pd.DataFrame(datafull)
+
+    print(df_baru)
