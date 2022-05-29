@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-def simpan_dt():
+def simpan_dt(datafull):
     #Menghapus file yg lama
     file = 'data/file_data.csv'
     if(os.path.exists(file) and os.path.isfile(file)):
@@ -29,7 +29,6 @@ def simpan_dt():
     df0.to_csv('data/file_data.csv', index=True)
 
     #Siapkaan data baru
-    global data_full
     df_baru=pd.DataFrame(datafull)
 
     print(df_baru)

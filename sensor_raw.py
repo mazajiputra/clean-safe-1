@@ -1,4 +1,5 @@
 import time
+from tkinter.messagebox import RETRY
 import board
 import adafruit_shtc3
 import pandas as pd
@@ -34,3 +35,4 @@ def baca_s(no_sensor):
         data_full|=data
         # print(data_suhu,data_kelembaban)
         print(data_full)
+        return data_full

@@ -60,6 +60,8 @@ try:
     r_on()#relay nyala semua
     while (True):
         #Pencatatan waktu
+        #datafull=[]
+        # datafull=waktu_now(datafull)
         waktu_now()
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
@@ -72,7 +74,8 @@ try:
         sen4()
         ####
         #Simpan Data file file offline
-        simpan_dt()
+        
+        #simpan_dt(datafull)
         ####
         #Istirahat
         sleep(15)
