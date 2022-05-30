@@ -8,6 +8,8 @@ from datetime import datetime
 import numpy as np 
 from array import array
 from struct import unpack
+from copy import copy
+
 from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
     I2cDevice, SensirionI2cCommand, CrcCalculator
 from sensirion_i2c_sht.sht3x import Sht3xTemperature, Sht3xHumidity
@@ -62,8 +64,9 @@ def baca_s(no_sensor,data_full):
         print(temperature)
         print(humidity)
         #2. Data dibuat data frame
-        data_full.insert(0,f's{no_sensor}_suhu', temperature )
-        data_full.insert(0,f's{no_sensor}_kelembaban', temperature )
+        data_full2=copy(data_full)
+        data_full2=data_full.insert(0,f's{no_sensor}_suhu', temperature )
+        data_full2=data_full.insert(0,f's{no_sensor}_kelembaban', temperature )
         #3. Data digabungkan dengan data yg sebelumnya
         print(data_full)
 
