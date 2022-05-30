@@ -10,7 +10,7 @@ from array import array
 from struct import unpack
 from copy import copy
 
-from sensirion_idata_sensorc_driver import LinuxI2cTransceiver, I2cConnection, \
+from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
     I2cDevice, SensirionI2cCommand, CrcCalculator
 from sensirion_i2c_sht.sht3x import Sht3xTemperature, Sht3xHumidity
 
@@ -68,8 +68,7 @@ def baca_s(no_sensor,data_full):
         data_sensor=pd.DataFrame(data=d)
         print(data_sensor)
         pd.concat([data_full, data_sensor], axis=1)
-        print(data_full)
-        return data_full
+        return data_s
         #Backup
         # data={f's{no_sensor}_suhu': temperature,f's{no_sensor}_kelembaban' : humidity}
         # data_full=Merge(data_full,data)
