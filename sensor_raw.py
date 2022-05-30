@@ -66,7 +66,7 @@ def baca_s(no_sensor,data_full):
         #2. Data dibuat data frame
         d={f's{no_sensor}_suhu':[temperature],f's{no_sensor}_kelembaban':[humidity]}
         data_sensor=pd.DataFrame(data=d)
-        print(data_sensor)
+        print("data_sensor",data_sensor)
         
         frames = [data_full, data_sensor]  # Or perform operations on the DFs
         data_hasil = pd.concat(frames)
