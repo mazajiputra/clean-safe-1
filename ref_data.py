@@ -7,8 +7,8 @@ def simpan_dt(df_baru):
     #Mengecek file yg lama
     file = 'data/file_data.csv'
     if(os.path.exists(file) and os.path.isfile(file)):
-        os.remove(file)
-        print("file deleted")
+        # os.remove(file)
+        # print("file deleted")
         #Bila file nya ada, tambah data
         #1. data di file dibaca
         df_lama=pd.read_csv('data/file_data.csv')
