@@ -1,3 +1,4 @@
+from unittest import result
 import pandas as pd
 import os
 
@@ -17,8 +18,8 @@ def simpan_dt(df_baru):
         #3 data lengkap sudah siap, Masukkan ke file lagi
         df_mix.to_csv('data/file_data.csv', index=False)
         print("File berhasil diperbarui")
-        
-
+        result=("A")
+        return result
     else:
         print("file not found, make again")
         df_baru = pd.DataFrame({'waktu': [0],
@@ -34,3 +35,6 @@ def simpan_dt(df_baru):
 
         #export DataFrame to CSV file
         df_baru.to_csv('data/file_data.csv', index=False)
+        
+        result=("B")
+        return result
