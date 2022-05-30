@@ -60,8 +60,7 @@ try:
     r_on()#relay nyala semua
     while (True):
         #Pencatatan waktu
-        data_full={}
-        data_full=waktu_now(data_full)
+        data_full=waktu_now()
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
         data_full=sen1(data_full)
