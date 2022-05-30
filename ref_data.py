@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 
+
 def simpan_dt(datafull):
     #Menghapus file yg lama
     file = 'data/file_data.csv'
