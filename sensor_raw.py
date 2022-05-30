@@ -64,10 +64,7 @@ def baca_s(no_sensor,data_full):
         #2. Data dibuat data frame
         data_full.insert(0,f's{no_sensor}_suhu', temperature )
         data_full.insert(0,f's{no_sensor}_kelembaban', temperature )
-        print(df)
         #3. Data digabungkan dengan data yg sebelumnya
-
-        
         print(data_full)
 
         return data_full
