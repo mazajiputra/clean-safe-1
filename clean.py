@@ -77,7 +77,8 @@ try:
         simpan_dt(data_full_4)
         ####
         #Istirahat
-        sleep(15)
+        sleep(15)#Istirahat 15 detik, pengukuran terhitung 20 detik, 
+        #Jadi ada 5 detik untuk pengukuran keseleleruhan sensor
         print("===================================END+=====================================")
 except KeyboardInterrupt:
     #r_off()#relay mati semua
