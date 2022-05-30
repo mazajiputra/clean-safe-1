@@ -20,34 +20,34 @@ setting_relay()
    # except Exception as e:
   #  print('Error:',e)
 
-def sen1(data):
+def sen1(data_full):
     try:
         ganti_c(2)
-        baca_s(1,data)
+        baca_s(1,data_full)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
-def sen2(data):
+def sen2(data_full):
     try:
         # ganti_c(4)
         ganti_c(4)
-        baca_s(2,data)
+        baca_s(2,data_full)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
-def sen3(data):
+def sen3(data_full):
     try:
         # ganti_c(5)
         ganti_c(5)
-        baca_s(3,data)
+        baca_s(3,data_full)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
-def sen4(data):
+def sen4(data_full):
     try:
         # ganti_c(7)
         ganti_c(7)
-        baca_s(4,data)
+        baca_s(4,data_full)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
