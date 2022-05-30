@@ -72,9 +72,9 @@ def baca_s(no_sensor,data_lawas):
         data_sensor=pd.DataFrame(data=d)
         # frames = [data_full, data_sensor]  # Or perform operations on the DFs
         data_balik = pd.concat([data_lawas, data_sensor], axis=1, join='outer')
-        print(data_hasil)
+        print(data_balik)
         print("=============================================================================")
-    return data_balik
+        return data_balik
         #Backup
         # data={f's{no_sensor}_suhu': temperature,f's{no_sensor}_kelembaban' : humidity}
         # data_full=Merge(data_full,data)
