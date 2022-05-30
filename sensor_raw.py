@@ -41,7 +41,7 @@ def cetak():
         return temperature,humidity
 
 
-def waktu_now(data_full):
+def waktu_now():
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     d={'waktu':[waktu]}
     data_full=pd.DataFrame(data=d)
