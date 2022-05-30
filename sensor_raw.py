@@ -31,7 +31,7 @@ def cetak():
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
         device = I2cDevice(I2cConnection(transceiver), 0x70)
         temperature, humidity = device.execute(Shtc3I2cCmdMeasure())
-        print("Temperature outside: {} °C".format(temperature.temperature_outside.degree_celsius))
+      #  print("Temperature outside: {} °C".format(temperature.temperature_outside.degree_celsius))
         return temperature,humidity
 
 
