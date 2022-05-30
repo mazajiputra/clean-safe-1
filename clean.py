@@ -69,18 +69,15 @@ try:
         data_waktu = waktu_now()
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
-        data_full_1 = sen1(data_waktu)
-        print("")
-        print("data_full_1: ",data_full_1)
-
+        data_full = sen1(data_waktu)
         #1(channel 4, pin 16)
-        data_full_2 = sen2(data_full_1)
-        print("data_full_2: ",data_full_2)
+        data_full = sen2(data_full)
         #3(channel 5, pin 20)
-        data_full_3=sen3(data_full_2)
+        data_full=sen3(data_full)
         # #4(channel 7, pin 21)
-        data_full_4=sen4(data_full_3)
+        data_full=sen4(data_full)
         ####
+        print(data_full)
         #Simpan Data file file offline
         simpan_dt(data_full_4)
         ####
