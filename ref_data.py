@@ -33,4 +33,4 @@ def simpan_dt(df_baru):
                     })
 
         #export DataFrame to CSV file
-        df_baru.to_csv('data/file_data.csv', headers=True, index=False)
+        df_baru.to_csv('data/file_data.csv', index=False)
