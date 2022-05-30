@@ -34,8 +34,8 @@ def simpan_dt(data):
     print("")
     print(df_baru)
 
-    df_baru.to_csv('data/file_data.csv', index=True, header=False)
- 
+    with open('data/file_data.csv', 'a') as f:
+        df_baru.to_csv(f, header=f.tell()==0)
     # print message
     print("Data appended successfully.")
 
