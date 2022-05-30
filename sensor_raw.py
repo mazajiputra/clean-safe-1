@@ -41,7 +41,7 @@ def cetak():
 
 def waktu_now(data_full):
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    d={'waktu':waktu}
+    d={'waktu':[waktu]}
     data_full=pd.DataFrame(data=d)
     print(data_full)
     #Membuat data frame
