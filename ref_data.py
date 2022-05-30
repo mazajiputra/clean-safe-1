@@ -31,5 +31,5 @@ def simpan_dt(datafull):
 
     #Siapkaan data baru
     df_baru=pd.DataFrame(datafull)
-
-    print("df baru",df_baru)
+    print("")
+    print(df_baru)
