@@ -21,20 +21,8 @@ def simpan_dt(df_baru):
         result=("A")
         return result
     else:
-        print("file not found, make again")
-        df_baru = pd.DataFrame({'waktu': [0],
-                    's1_suhu': [0],
-                    's1_kelembaban': [0],
-                    's2_suhu': [0],
-                    's2_kelembaban': [0],
-                    's3_suhu': [0],
-                    's3_kelembaban': [0],
-                    's4_suhu': [0],
-                    's4_kelembaban': [0],
-                    })
-
         #export DataFrame to CSV file
-        df_baru.to_csv('data/file_data.csv', index=False, header=True)
+        df_baru.to_csv('data/file_data.csv', index=True, header=True)
         print("file not found, make again2")
         result=("B")
         return result
