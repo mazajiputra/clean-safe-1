@@ -1,3 +1,4 @@
+from time import sleep
 def sen1(data):
     try:
         ganti_c(2)
