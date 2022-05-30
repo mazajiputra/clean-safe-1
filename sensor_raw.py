@@ -73,7 +73,8 @@ def baca_s(no_sensor,data_lawas):
         data_hasil = pd.concat([data_lawas, data_sensor], axis=1, join='outer')
         print(data_hasil)
         print("=============================================================================")
-        return data_hasil
+        data_balik=data_hasil.copy()
+        return data_balik
         #Backup
         # data={f's{no_sensor}_suhu': temperature,f's{no_sensor}_kelembaban' : humidity}
         # data_full=Merge(data_full,data)
