@@ -72,7 +72,7 @@ try:
         data_full_4=sen4(data_full_3)
         ####
         #Simpan Data file file offline
-        simpan_dt(data_full)
+        # simpan_dt(data_full)
         ####
         #Istirahat
         sleep(15)
