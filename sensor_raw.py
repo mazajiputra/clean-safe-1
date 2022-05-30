@@ -65,7 +65,7 @@ def baca_s(no_sensor,data_full):
         print(humidity)
         #2. Data dibuat data frame
         # 'df_{}'.format(keys)
-        data_s= data_full.copy()
+        data_s=copy(data_full)
         data_s.insert(0,'s{}_suhu'.format(no_sensor), temperature )
         # data_full.assign('s{}_kelembaban'.format(no_sensor)= humidity )
 
