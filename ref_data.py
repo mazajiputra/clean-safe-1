@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 
-def simpan_dt(datafull):
+def simpan_dt(data):
     #Menghapus file yg lama
     file = 'data/file_data.csv'
     if(os.path.exists(file) and os.path.isfile(file)):
@@ -30,6 +30,11 @@ def simpan_dt(datafull):
     df0.to_csv('data/file_data.csv', index=True)
 
     #Siapkaan data baru
-    df_baru=pd.DataFrame(datafull)
+    df_baru=pd.DataFrame(data)
     print("")
     print(df_baru)
+
+    df_baru.to_csv('data/file_data.csv', mode='a', index=False, header=False)
+ 
+    # print message
+    print("Data appended successfully.")

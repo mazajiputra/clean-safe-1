@@ -77,13 +77,12 @@ try:
         # #4(channel 7, pin 21)
         data_full_4=sen4(data_full_3)
         ####
-        print(data_full_4)
         #Simpan Data file file offline
         simpan_dt(data_full_4)
         ####
         #Istirahat
         sleep(15)
-        print("===================================END+======================")
+        print("===================================END+=====================================")
 except KeyboardInterrupt:
     #r_off()#relay mati semua
     print("keluar")
