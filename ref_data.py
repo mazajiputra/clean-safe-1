@@ -38,3 +38,6 @@ def simpan_dt(data):
  
     # print message
     print("Data appended successfully.")
+
+    df_check=pd.read_csv('data/file_data.csv')
+    print(df_check.head())
