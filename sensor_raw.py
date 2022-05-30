@@ -64,9 +64,8 @@ def baca_s(no_sensor,data_full):
         print(temperature)
         print(humidity)
         #2. Data dibuat data frame
-        data_full2=copy(data_full)
-        data_full2=data_full.insert(0,f's{no_sensor}_suhu', temperature )
-        data_full2=data_full.insert(0,f's{no_sensor}_kelembaban', temperature )
+        data_full.assign(f's{no_sensor}_suhu'= temperature )
+        data_full.assign(f's{no_sensor}_kelembaban'= temperature )
         #3. Data digabungkan dengan data yg sebelumnya
         print(data_full)
 
