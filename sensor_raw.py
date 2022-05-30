@@ -68,8 +68,8 @@ def baca_s(no_sensor,data_full):
         data_sensor=pd.DataFrame(data=d)
         print("data_sensor",data_sensor)
         
-        frames = [data_full, data_sensor]  # Or perform operations on the DFs
-        data_hasil = pd.concat(frames)
+        # frames = [data_full, data_sensor]  # Or perform operations on the DFs
+        data_hasil = data_full.merge(data_sensor, left_index=True, right_index=True)
 
         return data_hasil
         #Backup
