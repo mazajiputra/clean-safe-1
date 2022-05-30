@@ -4,12 +4,12 @@ import os
 
 def simpan_dt(data):
     #Menghapus file yg lama
-    file = 'data/file_data.csv'
-    if(os.path.exists(file) and os.path.isfile(file)):
-        os.remove(file)
-        print("file deleted")
-    else:
-        print("file not found")
+    # file = 'data/file_data.csv'
+    # if(os.path.exists(file) and os.path.isfile(file)):
+    #     os.remove(file)
+    #     print("file deleted")
+    # else:
+    #     print("file not found")
 
     #create DataFrame
     df0 = pd.DataFrame({'waktu': [0],
