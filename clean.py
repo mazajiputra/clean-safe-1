@@ -65,6 +65,7 @@ try:
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
         data_full_1 = sen1(data_waktu)
+        print("")
         print("data_full_1: ",data_full_1)
 
         #1(channel 4, pin 16)

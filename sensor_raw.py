@@ -52,7 +52,6 @@ def waktu_now():
 
 #while True:
 def baca_s(no_sensor,data_lawas):
-    print(data_lawas)
     try:
         temperature,humidity=cetak()
     except Exception as e:
@@ -60,6 +59,8 @@ def baca_s(no_sensor,data_lawas):
         humidity=0
         print('Error:',e)
     finally:
+        #0 Siapkan DF
+        data_balik=[]
         #1. Konfirmasi data yg ada
         print(temperature)
         print(humidity)
