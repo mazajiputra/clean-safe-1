@@ -65,14 +65,15 @@ def baca_s(no_sensor,data_full):
         print(humidity)
         #2. Data dibuat data frame
         # 'df_{}'.format(keys)
-        data_full.insert(0,'s{}_suhu'.format(no_sensor), temperature )
+        data_s= data_full.copy()
+        data_s.insert(0,'s{}_suhu'.format(no_sensor), temperature )
         # data_full.assign('s{}_kelembaban'.format(no_sensor)= humidity )
 
         # data_full['s{}_suhu'.format(no_sensor)] = temperature
         #3. Data digabungkan dengan data yg sebelumnya
-        print(data_full)
+        print(data_s)
 
-        return data_full
+        return data_s
         #Backup
         # data={f's{no_sensor}_suhu': temperature,f's{no_sensor}_kelembaban' : humidity}
         # data_full=Merge(data_full,data)
