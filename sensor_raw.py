@@ -39,21 +39,32 @@ def waktu_now(data_full):
     waktu=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     data_full={'waktu': waktu}
     print(data_full)
+
+    #Membuat data frame
     return data_full
+
+
 #while True:
 def baca_s(no_sensor,data_full):
     print(data_full)
     try:
         temperature,humidity=cetak()
-        print(temperature)
-        print(humidity)
-    except Exception:
+    except Exception as e:
         temperature=0
         humidity=0
+        print('Error:',e)
     finally:
+        #1. Konfirmasi data yg ada
+        print(temperature)
+        print(humidity)
+        #2. Data dibuat data frame
+
+        #3. Data digabungkan dengan data yg sebelumnya
 
         
-        data={f's{no_sensor}_suhu': temperature,f's{no_sensor}_kelembaban' : humidity}
-        data_full=Merge(data_full,data)
         print(data_full)
+
         return data_full
+        #Backup
+        # data={f's{no_sensor}_suhu': temperature,f's{no_sensor}_kelembaban' : humidity}
+        # data_full=Merge(data_full,data)
