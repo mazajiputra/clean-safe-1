@@ -13,7 +13,7 @@ def simpan_dt(df_baru):
         df_lama=pd.read_csv('data/file_data.csv')
         #2. data dari file + data baru dimix
         df_mix=pd.concat([df_lama, df_baru],ignore_index=True)
-        print(df_check.head())
+        print(df_mix.head())
         #3 data lengkap sudah siap, Masukkan ke file lagi
         df_mix.to_csv('data/file_data.csv', index=True)
         print("File berhasil diperbarui")
