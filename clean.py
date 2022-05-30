@@ -29,7 +29,6 @@ def sen1(data):
         result=baca_s(1,data)
     except Exception as e:
         print('Error:',e)
-        sleep(3) 
     finally:
         return result
 def sen2(data):
@@ -38,7 +37,6 @@ def sen2(data):
         result=baca_s(2,data)
     except Exception as e:
         print('Error:',e)
-        sleep(3) 
     finally:
         return result
 def sen3(data):
@@ -47,7 +45,6 @@ def sen3(data):
         result=baca_s(3,data)
     except Exception as e:
         print('Error:',e)
-        sleep(3) 
     finally:
         return result
 def sen4(data):
@@ -56,7 +53,6 @@ def sen4(data):
         result=baca_s(4,data)
     except Exception as e:
         print('Error:',e)
-        sleep(3) 
     finally:
         return result
 
