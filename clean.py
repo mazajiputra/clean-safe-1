@@ -61,14 +61,14 @@ try:
     r_on()#relay nyala semua
     while (True):
         #Pencatatan waktu
-        data_waktu=waktu_now()
+        data_waktu = waktu_now()
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
-        data_full_1=sen1(data_waktu)
+        data_full_1 = sen1(data_waktu)
         print("data_full_1: ",data_full_1)
 
         #1(channel 4, pin 16)
-        data_full_2=sen2(data_full_1)
+        data_full_2 = sen2(data_full_1)
         print("data_full_2: ",data_full_2)
         #3(channel 5, pin 20)
         # data_full_3=sen3(data_full_2)
