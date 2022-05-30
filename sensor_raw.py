@@ -67,7 +67,7 @@ def baca_s(no_sensor,data_full):
         d={f's{no_sensor}_suhu':[temperature],f's{no_sensor}_kelembaban':[humidity]}
         data_sensor=pd.DataFrame(data=d)
         print(data_sensor)
-        data_full.join(data_sensor)
+        pd.merge(data_full, data_sensor, left_index=True, right_index=True)
         print(data_full)
         return data_full
         #Backup
