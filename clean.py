@@ -24,10 +24,12 @@ def sen1(data_full):
     data=data_full
     try:
         ganti_c(2)
-        baca_s(1,data)
+        result=baca_s(1,data)
     except Exception as e:
         print('Error:',e)
         sleep(3) 
+    finally:
+        return result
 def sen2(data_full):
     data=data_full
     try:
@@ -36,6 +38,8 @@ def sen2(data_full):
     except Exception as e:
         print('Error:',e)
         sleep(3) 
+    finally:
+        return result
 def sen3(data_full):
     data=data_full
     try:
@@ -44,6 +48,8 @@ def sen3(data_full):
     except Exception as e:
         print('Error:',e)
         sleep(3) 
+    finally:
+        return result
 def sen4(data_full):
     data=data_full
     try:
@@ -52,6 +58,8 @@ def sen4(data_full):
     except Exception as e:
         print('Error:',e)
         sleep(3) 
+    finally:
+        return result
 ################################
 
 
