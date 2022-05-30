@@ -75,7 +75,7 @@ def baca_s(no_sensor,data_lawas):
         print(data_hasil)
         print("=============================================================================")
         data_balik=data_hasil.copy()
-        return data_balik
+    return data_balik
         #Backup
         # data={f's{no_sensor}_suhu': temperature,f's{no_sensor}_kelembaban' : humidity}
         # data_full=Merge(data_full,data)
