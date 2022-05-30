@@ -51,7 +51,7 @@ def waktu_now():
 
 
 #while True:
-def baca_s(no,data_lawas):
+def baca_s(no_sensor,data_lawas):
     print(data_lawas)
     try:
         temperature,humidity=cetak()
