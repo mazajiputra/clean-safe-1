@@ -52,6 +52,7 @@ def waktu_now():
 
 #while True:
 def baca_s(no_sensor,data_lawas):
+    print("datalawas",data_lawas)
     try:
         temperature,humidity=cetak()
     except Exception as e:
