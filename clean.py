@@ -63,13 +63,13 @@ try:
         data_full=waktu_now()
         #Sementara, karena hanya sisa 1 sensor
         #1(channel 2, pin 12)
-        data_full=sen1(data_full)
+        data_full_1=sen1(data_full)
         #1(channel 4, pin 16)
-        data_full=sen2(data_full)
+        data_full2=sen2(data_full_1)
         #3(channel 5, pin 20)
-        data_full=sen3(data_full)
+        data_full3=sen3(data_full2)
         #4(channel 7, pin 21)
-        data_full=sen4(data_full)
+        data_full=sen4(data_full3)
         ####
         #Simpan Data file file offline
         simpan_dt(data_full)
