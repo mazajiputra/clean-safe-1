@@ -6,7 +6,7 @@ from sensor_raw import waktu_now,baca_s
 from cmultiplexer_raw import ganti_c
 from datetime import datetime
 from ref_data import simpan_dt
-from ref_0_utama import sen1,sen2,sen3,sen4
+# from ref_0_utama import sen1,sen2,sen3,sen4
 # Mengatur data
 import pandas as pd
 
