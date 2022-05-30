@@ -21,7 +21,7 @@ def simpan_dt(df_baru):
 
     else:
         print("file not found, make again")
-            df0 = pd.DataFrame({'waktu': [0],
+        df_baru = pd.DataFrame({'waktu': [0],
                     's1_suhu': [0],
                     's1_kelembaban': [0],
                     's2_suhu': [0],
