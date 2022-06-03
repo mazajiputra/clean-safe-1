@@ -68,7 +68,7 @@ def baca_s(no_sensor,data_lawas):
         #2. Data dibuat data frame
         d={f's{no_sensor}_suhu':[temperature],f's{no_sensor}_kelembaban':[humidity]}
         data_sensor=pd.DataFrame(data=d)
-        data_sensor[f's{no_sensor}_suhu'].str.rstrip(' °C')
+        data_sensor[f's{no_sensor}_suhu'].str.removesuffix(' °C')
 
         data_balik = pd.concat([data_lawas, data_sensor], axis=1, join='outer')
         print("=============================================================================")
