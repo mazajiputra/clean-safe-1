@@ -13,7 +13,7 @@ from copy import copy
 
 from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
     I2cDevice, SensirionI2cCommand, CrcCalculator
-from ref_sensor_raw import Shtc3Temperature, Shtc3Humidity
+from ref_sensor_raw import Shtc3Temperature as Sht3xTemperature, Shtc3Humidity as Sht3xHumidity
 # from sensirion_i2c_sht.sht3x import Sht3xTemperature, Sht3xHumidity
 
 class Shtc3I2cCmdMeasure(SensirionI2cCommand):
@@ -30,7 +30,7 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def interpret_response(self, data):
         checked_data = SensirionI2cCommand.interpret_response(self, data)
         temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
-        return Shtc3Temperature(temperature_ticks), Shtc3Humidity(humidity_ticks)
+        return Sht3xTemperature(temperature_ticks), Sht3xHumidity(humidity_ticks)
 
 def cetak():
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
