@@ -20,21 +20,13 @@ class Sht3xTemperature():
     def __init__(self, ticks):
         self.ticks = ticks
 
-    @property
-    def degree_celsius(self):
-        return (self.ticks / 100.0) - 70.0
-
-    @staticmethod
-    def from_degree_celsius(temperature):
-        return Sht3xTemperature(round((temperature + 70.0) * 100.0))
-
     # Provide conversion to integer (used in the command class)
     def __int__(self):
         return self.ticks
 
     # Optional: Provide conversion to string, e.g. for printing
     def __str__(self):
-        return "{:.2f} °X".format(self.degree_celsius)
+        return "{:.2f} °C".format(self.degree_celsius)
 
 class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def __init__(self):
