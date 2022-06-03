@@ -17,24 +17,26 @@ from sensirion_i2c_sht.sht3x import Sht3xTemperature, Sht3xHumidity
 from struct import pack, unpack
 
 class Sht3xTemperature():
-    def __init__(self, ticks):
-        self.ticks = ticks
+    def __init__(self, rx_data):
+        self.rx_data = rx_data
 
     @property
-    def degree_celsius(self):
-        return self.ticks
+    def measure_interval_ms(self):
+        return unpack(">H", self.rx_data[0:2])[0]
 
-    @staticmethod
-    def from_degree_celsius(temperature):
-        return Sht3xTemperature(round((temperature + 70.0) * 100.0))
+    @property
+    def temperature_outside(self):
+        return Sht3xTemperature(self.rx_data[2:4])
 
-    # Provide conversion to integer (used in the command class)
-    def __int__(self):
-        return self.ticks
+    @property
+    def temperature_inside(self):
+        return Sht3xTemperature(self.rx_data[4:6])
 
     # Optional: Provide conversion to string, e.g. for printing
     def __str__(self):
-        return "{:.2f} °C".format(self.degree_celsius)
+        return "{:.2f} ms interval, {:.2f} °C outside, {:.2f} °C inside".format(
+            self.measure_interval_ms, self.temperature_outside,
+            self.temperature_inside)
 
 class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def __init__(self):
