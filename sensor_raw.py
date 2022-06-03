@@ -28,7 +28,7 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def interpret_response(self, data):
         checked_data = SensirionI2cCommand.interpret_response(self, data)
         temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
-        return Sht3xTemperature(temperature_ticks), Sht3xHumidity(humidity_ticks)
+        return Sht3xTemperature.degree_celsius(temperature_ticks), Sht3xHumidity(humidity_ticks)
 
 def cetak():
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
@@ -68,7 +68,7 @@ def baca_s(no_sensor,data_lawas):
         #2. Data dibuat data frame
         d={f's{no_sensor}_suhu':[temperature],f's{no_sensor}_kelembaban':[humidity]}
         data_sensor=pd.DataFrame(data=d)
-        data_sensor[f's{no_sensor}_suhu']=data_sensor[f's{no_sensor}_suhu'].str.removesuffix(' °C')
+        # data_sensor=data_sensor[f's{no_sensor}_suhu'].str.removesuffix(' °C')
 
         data_balik = pd.concat([data_lawas, data_sensor], axis=1, join='outer')
         print("=============================================================================")
