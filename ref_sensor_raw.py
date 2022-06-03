@@ -33,9 +33,10 @@ class Shtc3Temperature(object):
         #: The converted temperature in °F.
         self.degrees_fahrenheit = -49. + 315. * ticks / 65535.
 
+        return degrees_celsius
 
-    def __str__(self):
-        return '{:0.1f} °C'.format(self.degrees_celsius)
+    # def __str__(self):
+    #     return '{:0.1f} °C'.format(self.degrees_celsius)
 
 
 
@@ -62,6 +63,7 @@ class Shtc3Humidity(object):
         #: The converted humidity in %RH.
         self.percent_rh = 100. * ticks / 65535.
 
+        return percent_rh
 
-    def __str__(self):
-        return '{:0.1f} %RH'.format(self.percent_rh)
+    # def __str__(self):
+    #     return '{:0.1f} %RH'.format(self.percent_rh)
