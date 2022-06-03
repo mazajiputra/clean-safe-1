@@ -18,11 +18,10 @@ def simpan_dt(df_baru):
         #3 data lengkap sudah siap, Masukkan ke file lagi
         df_mix.to_csv('data/file_data.csv', index=False)
         print("File berhasil diperbarui")
-        result=("A")
-        return result
+
     else:
         #export DataFrame to CSV file
         df_baru.to_csv('data/file_data.csv', index=False, header=True)
+        print(df_baru)
         print("file not found, make again2")
-        result=("B")
-        return result
+        
