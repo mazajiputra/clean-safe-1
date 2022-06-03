@@ -36,8 +36,8 @@ class Shtc3Temperature(object):
         # return self.degrees_celsius
 
     def __str__(self):
-        return '{}'.format(self.degrees_celsius)
-        # return '{:0.1f}'.format(self.degrees_celsius)
+        # return '{}'.format(self.degrees_celsius)
+        return '{:0.1f}'.format(self.degrees_celsius)
         # return self.degrees_celsius
 
 
@@ -68,6 +68,6 @@ class Shtc3Humidity(object):
         # return self.percent_rh
 
     def __str__(self):
-        return '{} %RH'.format(self.percent_rh)
-        # return '{:0.1f} %RH'.format(self.percent_rh)
+        # return '{} %RH'.format(self.percent_rh)
+        return '{:0.1f} %RH'.format(self.percent_rh)
         # return self.percent_rh
