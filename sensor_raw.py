@@ -28,7 +28,10 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def interpret_response(self, data):
         checked_data = SensirionI2cCommand.interpret_response(self, data)
         temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
-        return Sht3xTemperature(temperature_ticks), Sht3xHumidity(humidity_ticks)
+        result_c=Sht3xTemperature(temperature_ticks)
+        result_c.replace(' °C','')
+        result_h=Sht3xHumidity(humidity_ticks)
+        return result_c,result_h
 
 def cetak():
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
