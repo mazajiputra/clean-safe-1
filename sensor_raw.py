@@ -35,13 +35,13 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
         # return temperature_ticks, humidity_ticks
 
 class Sht3xTemperature():
-    def __init__(self, ticks):
-        self.ticks = ticks
+    # def __init__(self, ticks):
+    #     self.ticks = ticks
 
 
-    # # Provide conversion to integer (used in the command class)
-    # def __int__(self):
-    #     return self.ticks
+    # Provide conversion to integer (used in the command class)
+    def __int__(self):
+        return self.ticks
 
 def cetak():
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
