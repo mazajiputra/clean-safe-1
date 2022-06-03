@@ -69,5 +69,5 @@ class Shtc3Humidity(object):
 
     def __str__(self):
         # return '{} %RH'.format(self.percent_rh)
-        return '{:0.1f} %RH'.format(self.percent_rh)
+        return '{:0.1f}'.format(self.percent_rh)
         # return self.percent_rh
