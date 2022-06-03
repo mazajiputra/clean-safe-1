@@ -14,6 +14,28 @@ from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
     I2cDevice, SensirionI2cCommand, CrcCalculator
 from sensirion_i2c_sht.sht3x import Sht3xTemperature, Sht3xHumidity
 
+from struct import pack, unpack
+
+class Sht3xTemperature():
+    def __init__(self, ticks):
+        self.ticks = ticks
+
+    @property
+    def degree_celsius(self):
+        return (self.ticks / 100.0) - 70.0
+
+    @staticmethod
+    def from_degree_celsius(temperature):
+        return Sht3xTemperature(round((temperature + 70.0) * 100.0))
+
+    # Provide conversion to integer (used in the command class)
+    def __int__(self):
+        return self.ticks
+
+    # Optional: Provide conversion to string, e.g. for printing
+    def __str__(self):
+        return "{:.2f} °C".format(self.degree_celsius)
+
 class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def __init__(self):
         super(Shtc3I2cCmdMeasure, self).__init__(
