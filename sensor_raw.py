@@ -13,7 +13,8 @@ from copy import copy
 
 from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
     I2cDevice, SensirionI2cCommand, CrcCalculator
-from sensirion_i2c_sht.sht3x import Sht3xTemperature, Sht3xHumidity
+from ref_sensor_raw import Sht3xTemperature, Sht3xHumidity
+
 
 class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def __init__(self):
