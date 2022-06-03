@@ -14,28 +14,6 @@ from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
     I2cDevice, SensirionI2cCommand, CrcCalculator
 from sensirion_i2c_sht.sht3x import Sht3xTemperature, Sht3xHumidity
 
-from struct import pack, unpack
-
-# class Sht3xTemperature():
-#     def __init__(self, ticks):
-#         self.ticks = ticks
-
-#     @property
-#     def degree_celsius(self):
-#         return self.ticks
-
-#     @staticmethod
-#     def from_degree_celsius(temperature):
-#         return Sht3xTemperature(round((temperature + 70.0) * 100.0))
-
-#     # Provide conversion to integer (used in the command class)
-#     def __int__(self):
-#         return self.ticks
-
-#     # Optional: Provide conversion to string, e.g. for printing
-#     def __str__(self):
-#         return "{:.2f} °C".format(self.degree_celsius)
-
 class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def __init__(self):
         super(Shtc3I2cCmdMeasure, self).__init__(
@@ -46,21 +24,19 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
             timeout=0,
             crc=CrcCalculator(8, 0x31, 0xFF),
         )
-    # Provide conversion to integer (used in the command class)
-   
 
     def interpret_response(self, data):
         checked_data = SensirionI2cCommand.interpret_response(self, data)
-        # temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
-        temperature_ticks, humidity_ticks = unpack(">HH", checked_data)
-        return Sht3xTemperature(temperature_ticks.degree_celsius), Sht3xHumidity(humidity_ticks)
-        # return temperature_ticks, humidity_ticks
-
+        temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
+        return Sht3xTemperature(temperature_ticks), Sht3xHumidity(humidity_ticks)
 
 def cetak():
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
         device = I2cDevice(I2cConnection(transceiver), 0x70)
         response = device.execute(Shtc3I2cCmdMeasure())
+        # print("Interval: {} ms".format(response.measure_interval_ms))
+        # print("Temperature outside: {} °C".format(response.temperature_outside.degree_celsius))
+        # print("Temperature inside: {}".format(response.temperature_inside))
         temperature,humidity=response
         return temperature,humidity
 
