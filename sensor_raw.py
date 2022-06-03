@@ -40,7 +40,7 @@ def cetak():
         # print("Temperature outside: {} °C".format(response.temperature_outside.degree_celsius))
         # print("Temperature inside: {}".format(response.temperature_inside))
         temperature,humidity=response
-        return temperature,humidity
+        return temperature.degree_celsius,humidity
 
 
 def waktu_now():
