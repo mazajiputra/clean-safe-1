@@ -22,7 +22,7 @@ def simpan_dt(df_baru):
         return result
     else:
         #export DataFrame to CSV file
-        df_baru.to_csv('data/file_data.csv', index=True, header=True)
+        df_baru.to_csv('data/file_data.csv', index=False, header=True)
         print("file not found, make again2")
         result=("B")
         return result
