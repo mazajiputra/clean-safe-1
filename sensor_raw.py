@@ -24,6 +24,8 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
             timeout=0,
             crc=CrcCalculator(8, 0x31, 0xFF),
         )
+        return self.ticks
+    
 
     def interpret_response(self, data):
         checked_data = SensirionI2cCommand.interpret_response(self, data)
