@@ -22,7 +22,7 @@ class Sht3xTemperature():
 
     @property
     def degree_celsius(self):
-        return (self.ticks / 100.0) - 70.0
+        return self.ticks
 
     @staticmethod
     def from_degree_celsius(temperature):
