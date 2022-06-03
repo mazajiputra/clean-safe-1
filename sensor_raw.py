@@ -29,7 +29,7 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
         checked_data = SensirionI2cCommand.interpret_response(self, data)
         temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
         result_c=Sht3xTemperature(temperature_ticks)
-        result_c.replace(' °C','')
+        result_c=result_c.replace(' °C','')
         result_h=Sht3xHumidity(humidity_ticks)
         return result_c,result_h
 
