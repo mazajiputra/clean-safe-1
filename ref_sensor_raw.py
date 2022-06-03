@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # (c) Copyright 2021 Sensirion AG, Switzerland
-
+#https://sensirion.github.io/python-i2c-sht/_modules/sensirion_i2c_sht/shtc3/response_types.html#Shtc3Temperature.__init__
 from __future__ import absolute_import, division, print_function
 
 import logging
