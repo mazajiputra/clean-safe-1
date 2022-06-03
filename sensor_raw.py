@@ -25,15 +25,14 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
             crc=CrcCalculator(8, 0x31, 0xFF),
         )
     # Provide conversion to integer (used in the command class)
-    def __int__(self):
-        return self.ticks
-    
+   
 
     def interpret_response(self, data):
         checked_data = SensirionI2cCommand.interpret_response(self, data)
         # temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
         temperature_ticks, humidity_ticks = unpack(">HH", checked_data)
-        return Sht3xTemperature(temperature_ticks), Sht3xHumidity(humidity_ticks)
+        # return Sht3xTemperature(temperature_ticks), Sht3xHumidity(humidity_ticks)
+        return temperature_ticks, humidity_ticks
 
 def cetak():
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
