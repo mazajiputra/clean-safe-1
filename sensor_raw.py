@@ -13,10 +13,7 @@ from copy import copy
 from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
     I2cDevice, SensirionI2cCommand, CrcCalculator
 from sensirion_i2c_sht.sht3x import Sht3xTemperature, Sht3xHumidity
-class Sht3xTemperature():
-    # Provide conversion to integer (used in the command class)
-    def __int__(self):
-        return self.ticks
+
 class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def __init__(self):
         super(Shtc3I2cCmdMeasure, self).__init__(
@@ -71,8 +68,7 @@ def baca_s(no_sensor,data_lawas):
         #2. Data dibuat data frame
         d={f's{no_sensor}_suhu':[temperature],f's{no_sensor}_kelembaban':[humidity]}
         data_sensor=pd.DataFrame(data=d)
-        # data_sensor=data_sensor[f's{no_sensor}_suhu'].str.removesuffix(' °C')
-
+        # frames = [data_full, data_sensor]  # Or perform operations on the DFs
         data_balik = pd.concat([data_lawas, data_sensor], axis=1, join='outer')
         print("=============================================================================")
         return data_balik
