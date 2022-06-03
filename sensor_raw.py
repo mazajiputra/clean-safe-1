@@ -24,6 +24,9 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
             timeout=0,
             crc=CrcCalculator(8, 0x31, 0xFF),
         )
+    # Provide conversion to integer (used in the command class)
+    def __int__(self):
+        return self.ticks
     
 
     def interpret_response(self, data):
@@ -40,7 +43,7 @@ def cetak():
         # print("Temperature outside: {} °C".format(response.temperature_outside.degree_celsius))
         # print("Temperature inside: {}".format(response.temperature_inside))
         temperature,humidity=response
-        return temperature.degree_celsius,humidity
+        return temperature,humidity
 
 
 def waktu_now():
