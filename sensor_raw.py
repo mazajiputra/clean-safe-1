@@ -27,7 +27,8 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
 
     def interpret_response(self, data):
         checked_data = SensirionI2cCommand.interpret_response(self, data)
-        temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
+        # temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
+        temperature_ticks, humidity_ticks = unpack(">HH", checked_data)
         return Sht3xTemperature(temperature_ticks), Sht3xHumidity(humidity_ticks)
 
 def cetak():
