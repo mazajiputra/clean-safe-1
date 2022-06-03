@@ -1,5 +1,6 @@
 import time
 from tkinter.messagebox import RETRY
+from unittest import result
 from urllib import response
 import board
 import adafruit_shtc3
@@ -28,10 +29,7 @@ class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def interpret_response(self, data):
         checked_data = SensirionI2cCommand.interpret_response(self, data)
         temperature_ticks, humidity_ticks = unpack(">2H", checked_data)
-        result_c=Sht3xTemperature(temperature_ticks)
-        result_c=result_c.replace(' °C','')
-        result_h=Sht3xHumidity(humidity_ticks)
-        return result_c,result_h
+        return Sht3xTemperature(temperature_ticks), Sht3xHumidity(humidity_ticks)
 
 def cetak():
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
@@ -56,7 +54,9 @@ def waktu_now():
 #while True:
 def baca_s(no_sensor,data_lawas):
     try:
-        temperature,humidity=cetak()
+        result_a,result_b=cetak()
+        temperature=result_a
+        humidity=result_b
     except Exception as e:
         temperature=0
         humidity=0
