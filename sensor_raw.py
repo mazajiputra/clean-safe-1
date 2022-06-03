@@ -55,7 +55,7 @@ def waktu_now():
 def baca_s(no_sensor,data_lawas):
     try:
         result_a,result_b=cetak()
-        temperature=result_a.removesuffix(' °C')
+        temperature=result_a
         humidity=result_b
     except Exception as e:
         temperature=0
@@ -66,6 +66,7 @@ def baca_s(no_sensor,data_lawas):
         data_balik = pd.DataFrame()
         #1. Konfirmasi data yg ada
         print(temperature)
+        print(type(temperature))
         print(humidity)
         print("")
         #2. Data dibuat data frame
