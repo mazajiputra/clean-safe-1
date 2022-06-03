@@ -34,7 +34,7 @@ class Sht3xTemperature():
 
     # Optional: Provide conversion to string, e.g. for printing
     def __str__(self):
-        return "{:.2f} °C".format(self.degree_celsius)
+        return "{:.2f} °X".format(self.degree_celsius)
 
 class Shtc3I2cCmdMeasure(SensirionI2cCommand):
     def __init__(self):
